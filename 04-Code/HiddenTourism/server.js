@@ -20,10 +20,10 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(morgan('short'))
 app.use(myConnection(mysql,{
     host: 'localhost',
-    port: 3307,
+    port: 3306,
     user: 'root',
-    password: '12345678',
-    database: 'hiddentourismdata'
+    password: '12345',
+    database: 'hiddentourismnode'
 },'single'));
 app.use(express.json())
 
