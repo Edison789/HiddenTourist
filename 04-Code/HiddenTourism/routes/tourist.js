@@ -18,16 +18,12 @@ routes.post('/touristAdd', (req, res) => {
     const id = req.body.id
     const firstName = req.body.firstName
     const lastName = req.body.lastName
-    const location = req.body.location
-    const dateR = req.body.dateR
-    var paymentMethod = req.body.paymentMethod
-    if(Array.isArray(paymentMethod)){
-
-        paymentMethod = paymentMethod.join(",")
-    }
+    const passwrd = req.body.passwrd
+    const user = req.body.user
+    const email = req.body.email
     req.getConnection((err, conn) => {
         if (err) return res.send(err)
-        conn.query('INSERT INTO tourist (IdTourist,FirstName,LastName,Location,ResevationDate,PaymentType) VALUES (?,?,?,?,?,?)', [id,firstName,lastName,location,dateR,paymentMethod], (err, rows) => {
+        conn.query('INSERT INTO tourist (IDTOURIST,FIRSTNAMETOURIST,LASTNAMETOURIST,PASSWORDTOURIST,USERTOURIST,EMAILTOURIST) VALUES (?,?,?,?,?,?)', [id,firstName,lastName,passwrd,user,email], (err, rows) => {
             if (err) return res.send(err)
             res.redirect('./')
         })
