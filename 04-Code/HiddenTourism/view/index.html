@@ -34,7 +34,7 @@
                     <li><a href="#">SITES</a></li>
                     <li><a href="#">RESTAURANTS</a></li>
                     <li><a href="login.html">SIGN IN</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+                    <li><a href="" data-toggle="modal" data-target="#myModal">SIGN UP</a></li>
                 </ul>
             </div>
         </div>
@@ -139,15 +139,6 @@
             </div>
         </div>
     </div>
-    <div class="row text-center">
-        <div class="col-sm-15">
-            <div class="thumbnail">
-                <img src="img/registro.png" alt="Resgister" style="width: 200px; height: 200px" />
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">New
-                    Reservation</button>
-            </div>
-        </div>
-    </div>
     <!-- Modal -->
     <form action="/touristAdd" method="POST">
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -156,7 +147,7 @@
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                 aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Tourist Registration</h4>
+                        <h4 class="modal-title" id="myModalLabel">Register</h4>
                     </div>
                     <div class="modal-body">
                         <div class="row container-fluid">
@@ -164,33 +155,12 @@
                                 <img src="img/Baños Ambato.jfif" alt="" class="img-responsive">
                             </div>
                             <div class="col-md-6">
-                                <input type="text" placeholder="Id:" name="id">
+                                <input type="text" placeholder="DI:" name="id">
                                 <input type="text" placeholder="First Name:" name="firstName">
                                 <input type="text" placeholder="Last Name:" name="lastName">
-                                <select name="location" id="">
-                                    <option disabled>Location</option>
-                                    <option value="Quito">Quito</option>
-                                    <option value="Guayaquil">Guayaquil</option>
-                                    <option value="Cuenca">Cuenca</option>
-                                    <option value="Ambato">Ambato</option>
-                                </select>
-                                <input type="date" name="dateR">
-                                <h4>Payment Method</h4>
-                                <div class="checkbox">
-                                    <label for="">
-                                        <input type="checkbox" name="paymentMethod" value="Cash">Cash
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label for="">
-                                        <input type="checkbox" name="paymentMethod" value="CreditCard">Credit Card
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label for="">
-                                        <input type="checkbox" name="paymentMethod" value="DebitCard">Debit Card
-                                    </label>
-                                </div>
+                                <input type="password" name="passwrd" placeholder="Password:">
+                                <input type="text" placeholder="User:" name="user">
+                                <input type="email" placeholder="Email:" name="email">
                             </div>
                         </div>
                     </div>
