@@ -1,10 +1,12 @@
-const express = require('express');
-const app = express();
-const path = require('path');
-const mysql = require('mysql');
+const express = require('express')
+const app = express()
+const path = require('path')
+const mysql = require('mysql')
 const morgan = require('morgan')
-const myConnection = require('express-myconnection');
+const myConnection = require('express-myconnection')
 const bodyParser = require('body-parser')
+const flush = require('connect-flash')
+const session = require('express-session')
 
 var port = 3000;
 
@@ -17,6 +19,7 @@ const touristRoutes = require('./routes/tourist.js')
 const placeRoutes = require('./routes/Place.js')
 const restaurantRoutes = require('./routes/Restaurant')
 const tourGuideRoutes = require('./routes/TourGuide.js')
+const loginRoutes = require('./routes/Login.js')
 
 //middlewares
 app.use(bodyParser.urlencoded({extended: false}))
@@ -29,12 +32,20 @@ app.use(myConnection(mysql,{
     database: 'hiddentourismnode'
 },'single'));
 app.use(express.json())
+app.use(session({
+    secret: 'secret',
+    cookie: {maxAge: 60000},
+    resave: false,
+    saveUninitialized: false
+}))
+app.use(flush())
 
 //routes
 app.use('/',touristRoutes)
 app.use('/',placeRoutes)
 app.use('/',restaurantRoutes)
 app.use('/',tourGuideRoutes)
+app.use('/',loginRoutes)
 
 //static files 
 app.use(express.static(path.join(__dirname,'view')));
