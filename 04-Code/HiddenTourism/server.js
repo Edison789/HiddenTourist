@@ -16,6 +16,7 @@ app.get('/', function (req, res) {
 const touristRoutes = require('./routes/tourist.js')
 const placeRoutes = require('./routes/Place.js')
 const restaurantRoutes = require('./routes/Restaurant')
+const tourGuideRoutes = require('./routes/TourGuide.js')
 
 //middlewares
 app.use(bodyParser.urlencoded({extended: false}))
@@ -33,6 +34,7 @@ app.use(express.json())
 app.use('/',touristRoutes)
 app.use('/',placeRoutes)
 app.use('/',restaurantRoutes)
+app.use('/',tourGuideRoutes)
 
 //static files 
 app.use(express.static(path.join(__dirname,'view')));
