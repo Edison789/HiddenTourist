@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="shortcut icon" type="image/x-icon" href="/img/logoICO.ico">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <title>Tourist Information</title>
+    </head>
+    <body>
+        <h1>Tourist Information</h1>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>PASSWORD</th>
+                    <th>USER</th>
+                    <th>EMAIL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var i=0; i <rows.length; i++) { %>
+                    <tr>
+                        <td>
+                            <%= rows[i].IDTOURIST%>
+                        </td>
+                        <td>
+                            <%= rows[i].FIRSTNAMETOURIST%>
+                        </td>
+                        <td>
+                            <%= rows[i].LASTNAMETOURIST%>
+                        </td>
+                        <td>
+                            <%= rows[i].PASSWORDTOURIST%>
+                        </td>
+                        <td>
+                            <%= rows[i].USERTOURIST%>
+                        </td>
+                        <td>
+                            <%= rows[i].EMAILTOURIST%>
+                        </td>
+                        <% } %>
+            </tbody>
+        </table>
+        <div class="text-uppercase text-center">
+            <a href="administratorGUI.html" class="btn btn-secondary btn-lg active" role="button">Regresar al Menú principal</a>
+            
+        </div>
+
+    </body>
+</html>

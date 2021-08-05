@@ -1,18 +1,6 @@
 const express = require('express');
 const routes = express.Router();
 
-
-//Read tourist
-routes.get('/read', (req, res) => {
-    req.getConnection((err, conn) => {
-        if (err) return res.send(err)
-        conn.query('SELECT * FROM tourist', (err, rows) => {
-            if (err) return res.send(err)
-            res.json(rows)
-        })
-    })
-})
-
 //Register Tourist
 routes.post('/touristAdd', (req, res) => {
     const id = req.body.id
@@ -29,5 +17,21 @@ routes.post('/touristAdd', (req, res) => {
         })
     })
 })
+
+//VIEW TOURIST
+routes.get('/viewTourist', (req, res) => {
+    req.getConnection((err, conn) => {
+        if (err) return res.send(err)
+        conn.query('SELECT * FROM tourist', (err, rows, fields) => {
+            if (!err) {
+                res.render('tableTourist.ejs', {
+                    rows
+                });
+            } else {
+                console.log(err);
+            }
+        });
+    })
+});
 
 module.exports = routes;
