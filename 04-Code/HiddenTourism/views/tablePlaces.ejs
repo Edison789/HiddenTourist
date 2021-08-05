@@ -7,30 +7,45 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <title>Tourguide Information</title>
+    <title>Place Information</title>
 </head>
 <body>
-    <h1>Tourguide Information</h1>
+    <h1>Place Information</h1>
     <table class="table table-bordered table-hover">
-        <h1>Computers</h1>
         <thead>
             <tr>
                 <th>ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
+                <th>Name</th>
+                <th>PROVINCE</th>
+                <th>CANTON</th>
+                <th>ADDRESS</th>
+                <th>CONTACT</th>
+                <th>ATIVITIES</th>
             </tr>
         </thead>
         <tbody>
             <% for(var i=0; i <rows.length; i++) { %>
                 <tr>
                     <td>
-                        <%= rows[i].IDTOURGUIDE%>
+                        <%= rows[i].IDPLACE%>
                     </td>
                     <td>
-                        <%= rows[i].FIRSTNAMETOURGUIDE%>
+                        <%= rows[i].NAMEPLACE%>
                     </td>
                     <td>
-                        <%= rows[i].LASTNAMETOURGUIDE%>
+                        <%= rows[i].PROVINCEPLACE%>
+                    </td>
+                    <td>
+                        <%= rows[i].CANTONPLACE%>
+                    </td>
+                    <td>
+                        <%= rows[i].ADDRESSPLACE%>
+                    </td>
+                    <td>
+                        <%= rows[i].CONTACTPLACE%>
+                    </td>
+                    <td>
+                        <%= rows[i].ACTIVITIESPLACE%>
                     </td>
                     <% } %>
         </tbody>
@@ -38,7 +53,9 @@
     <div class="text-uppercase text-center">
         <a href="administratorGUI.html" class="btn btn-secondary btn-lg active" role="button">Regresar al Menú
             principal</a>
+
     </div>
+
 </body>
 
 </html>

@@ -19,4 +19,20 @@ routes.post('/placeAdd', (req, res) => {
     })
 })
 
+//View Place
+routes.get('/viewPlace', (req, res) => {
+    req.getConnection((err, conn) => {
+        if (err) return res.send(err)
+        conn.query('SELECT * FROM place', (err, rows, fields) => {
+            if (!err) {
+                res.render('tablePlaces.ejs', {
+                    rows
+                });
+            } else {
+                console.log(err);
+            }
+        });
+    })
+});
+
 module.exports = routes;
