@@ -15,4 +15,19 @@ routes.post('/tourGuideAdd', (req, res) => {
     })
 })
 
+routes.get('/viewGuide', (req, res) => {
+    req.getConnection((err, conn) => {
+        if (err) return res.send(err)
+        conn.query('SELECT * FROM tourguide', (err, rows, fields) => {
+            if (!err) {
+                res.render('tableTourGuide.ejs', {
+                    rows
+                });
+            } else {
+                console.log(err);
+            }
+        });
+    })
+});
+
 module.exports = routes;

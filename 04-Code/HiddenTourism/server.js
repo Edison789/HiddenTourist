@@ -11,7 +11,7 @@ const session = require('express-session')
 var port = 3000;
 
 app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/view/index.html');
+    res.sendFile(__dirname + '/views/index.html');
 });
 
 //import routes
@@ -20,6 +20,8 @@ const placeRoutes = require('./routes/Place.js')
 const restaurantRoutes = require('./routes/Restaurant')
 const tourGuideRoutes = require('./routes/TourGuide.js')
 const loginRoutes = require('./routes/Login.js')
+
+app.set('view engine', 'ejs');
 
 //middlewares
 app.use(bodyParser.urlencoded({extended: false}))
@@ -48,7 +50,7 @@ app.use('/',tourGuideRoutes)
 app.use('/',loginRoutes)
 
 //static files 
-app.use(express.static(path.join(__dirname,'view')));
+app.use(express.static(path.join(__dirname,'views')));
 
 app.listen(port);
 console.log("Server is running in port: " + port);
