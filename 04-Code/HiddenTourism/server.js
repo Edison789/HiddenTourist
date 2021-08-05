@@ -14,6 +14,7 @@ app.get('/', function (req, res) {
 
 //import routes
 const touristRoutes = require('./routes/tourist.js');
+const placeRoutes = require('./routes/Place.js')
 
 //middlewares
 app.use(bodyParser.urlencoded({extended: false}))
@@ -29,6 +30,7 @@ app.use(express.json())
 
 //routes
 app.use('/',touristRoutes);
+app.use('/',placeRoutes);
 
 //static files 
 app.use(express.static(path.join(__dirname,'view')));
