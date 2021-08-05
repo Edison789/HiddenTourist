@@ -8,6 +8,7 @@
     line-height: 1.5;
     color: #333;
     overflow-x: hidden;
+    align-content: center;
   }
   
   .header {
@@ -49,9 +50,10 @@
     z-index: 1;
     opacity: .85;
   }
-  
+
   .header-content {
     z-index: 2;
+    align-content: center;
   }
   
   @media (max-width: 960px) {
@@ -64,12 +66,11 @@
     height: 100%;
     align-content: center;
     }
-    
     .card{
-    height: 370px;
+    height: 390px;
     margin-top: auto;
     margin-bottom: auto;
-    width: 400px;
+    width: 500px;
     background-color: #343635!important;
     }
     
@@ -99,6 +100,16 @@
     color: black;
     background-color: white;
     }
+    .back_btn{
+      color: white;
+      background-color: #3c4cba;
+      width: 200px;
+      }
+      
+      .back_btn:hover{
+      color: black;
+      background-color: white;
+      }
     
     .links{
     color: white;
@@ -107,3 +118,8 @@
     .links a{
     margin-left: 4px;
     }
+    .user{
+      color: white;
+      text-align: left;
+    }
+    
