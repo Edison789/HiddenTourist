@@ -16,7 +16,7 @@ routes.post('/touristAdd', (req, res) => {
             res.redirect('./')
         })
     })
-})
+});
 
 //VIEW TOURIST
 routes.get('/viewTourist', (req, res) => {
@@ -43,6 +43,23 @@ routes.post('/deleteTourist', (req, res) => {
             if (err) return res.send(err)
             res.redirect('./')
         });
+    })
+});
+
+//UPDATE TOURIST
+routes.post('/updateTourist', (req, res) => {
+    const id = req.body.id
+    const firstName = req.body.firstName
+    const lastName = req.body.lastName
+    const passwrd = req.body.passwrd
+    const user = req.body.user
+    const email = req.body.email
+    req.getConnection((err, conn) => {
+        if (err) return res.send(err)
+        conn.query('UPDATE tourist SET FIRSTNAMETOURIST=?, LASTNAMETOURIST=?, PASSWORDTOURIST=?, USERTOURIST=?, EMAILTOURIST=? WHERE IDTOURIST=?', [firstName,lastName,passwrd,user,email,id], (err, rows) => {
+            if (err) return res.send(err)
+            res.redirect('./')
+        })
     })
 });
 
