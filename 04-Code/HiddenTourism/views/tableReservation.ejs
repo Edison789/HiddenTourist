@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/logoICO.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Reservation Information</title>
+</head>
+
+<body>
+
+    <h1>Reservation Information</h1>
+    <table class="table table-hover table-dark">
+        <thread>
+            <tr>
+                <th scope="col">
+                    <div align="center">ID Reservation</div>
+                </th>
+                <th scope="col">
+                    <div align="center">ID Tourist</div>
+                </th>
+                <th scope="col">
+                    <div align="center">Location</div>
+                </th>
+                <th scope="col">
+                    <div align="center">Payment Type</div>
+                </th>
+                <th scope="col">
+                    <div align="center">Reservation Date</div>
+                </th>
+            </tr>
+            </tread>
+
+            <tbody>
+                <% for(var i=0; i <rows.length; i++) { %>
+                    <tr>
+                        <td>
+                            <%= rows[i].IDRESERVATION%>
+                        </td>
+                        <td>
+                            <%= rows[i].IDTOURIST%>
+                        </td>
+                        <td>
+                            <%= rows[i].LOCATIONRESERVATION%>
+                        </td>
+                        <td>
+                            <%= rows[i].PAYMENTTYPERESERVATION%>
+                        </td>
+                        <td>
+                            <%= rows[i].RESERVATIONDATERESERVATION%>
+                        </td>
+                        <td>
+                            <a href="/deleteReservation/<%=rows[i].IDRESERVATION%>" class="btn btn-danger">Delete</a>
+                            <a href="/edit/" <%=rows[i].IDRESERVATION%> class="btn btn-danger">Edit</a>
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
+
+    </table>
+
+    <div class="text-uppercase text-center">
+        <a href="administratorGUI.html" class="btn btn-secondary btn-lg active" role="button">Regresar al Menú principal</a>
+
+    </div>
+
+</body>
+
+</html>

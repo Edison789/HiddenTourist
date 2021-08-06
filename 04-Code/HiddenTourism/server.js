@@ -10,7 +10,7 @@ const session = require('express-session')
 
 var port = 3000;
 
-app.get('/', function (req, res) {
+app.get('/', function(req, res) {
     res.sendFile(__dirname + '/views/index.html');
 });
 
@@ -20,37 +20,38 @@ const placeRoutes = require('./routes/Place.js')
 const restaurantRoutes = require('./routes/Restaurant')
 const tourGuideRoutes = require('./routes/TourGuide.js')
 const loginRoutes = require('./routes/Login.js')
-
+const reservationRoutes = require('./routes/Reservation.js')
 app.set('view engine', 'ejs');
 
 //middlewares
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(morgan('short'))
-app.use(myConnection(mysql,{
+app.use(myConnection(mysql, {
     host: 'localhost',
     port: 3306,
     user: 'root',
     password: '12345',
     database: 'hiddentourismnode'
-},'single'));
+}, 'single'));
 app.use(express.json())
 app.use(session({
     secret: 'secret',
-    cookie: {maxAge: 60000},
+    cookie: { maxAge: 60000 },
     resave: false,
     saveUninitialized: false
 }))
 app.use(flush())
 
 //routes
-app.use('/',touristRoutes)
-app.use('/',placeRoutes)
-app.use('/',restaurantRoutes)
-app.use('/',tourGuideRoutes)
-app.use('/',loginRoutes)
+app.use('/', touristRoutes)
+app.use('/', placeRoutes)
+app.use('/', restaurantRoutes)
+app.use('/', tourGuideRoutes)
+app.use('/', loginRoutes)
+app.use('/', reservationRoutes)
 
 //static files 
-app.use(express.static(path.join(__dirname,'views')));
+app.use(express.static(path.join(__dirname, 'views')));
 
 app.listen(port);
 console.log("Server is running in port: " + port);
