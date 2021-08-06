@@ -56,4 +56,16 @@ routes.post('/updateTourguide', (req, res) => {
     })
 });
 
+//DELETE BY ID
+routes.get('/deleteTourguide/:id', (req, res) => {
+    const id = req.params.id;
+    req.getConnection((err, conn) => {
+        if(err) return res.send(err)
+        conn.query('DELETE FROM tourguide WHERE IDTOURGUIDE=?',[id], (err, rows, fields) => {
+            if(err) return res.send(err)
+            res.redirect(req.get('referer'));
+        });
+    });
+});
+
 module.exports = routes;

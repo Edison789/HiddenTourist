@@ -42,12 +42,16 @@
                         <td>
                             <%= rows[i].EMAILTOURIST%>
                         </td>
-                        <% } %>
+                        <td>
+                            <a href="/deleteTourist/<%=rows[i].IDTOURIST%>" class="btn btn-danger">Delete</a>
+                            <a href="/edit/"<%=rows[i].IDTOURIST%> class="btn btn-danger">Edit</a>
+                        </td>
+                    </tr>
+                <% } %>
             </tbody>
         </table>
         <div class="text-uppercase text-center">
             <a href="administratorGUI.html" class="btn btn-secondary btn-lg active" role="button">Regresar al Menú principal</a>
-            
         </div>
 
     </body>

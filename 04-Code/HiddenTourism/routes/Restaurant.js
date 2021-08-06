@@ -63,4 +63,16 @@ routes.post('/updateRestaurant', (req, res) => {
     })
 });
 
+//DELETE BY ID
+routes.get('/deleteRestaurant/:id', (req, res) => {
+    const id = req.params.id;
+    req.getConnection((err, conn) => {
+        if(err) return res.send(err)
+        conn.query('DELETE FROM restaurant WHERE IDRESTAURANT=?',[id], (err, rows, fields) => {
+            if(err) return res.send(err)
+            res.redirect(req.get('referer'));
+        });
+    });
+});
+
 module.exports = routes;

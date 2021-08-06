@@ -63,4 +63,16 @@ routes.post('/updateTourist', (req, res) => {
     })
 });
 
+//DELETE BY ID
+routes.get('/deleteTourist/:id', (req, res) => {
+    const id = req.params.id;
+    req.getConnection((err, conn) => {
+        if(err) return res.send(err)
+        conn.query('DELETE FROM tourist WHERE IDTOURIST=?',[id], (err, rows, fields) => {
+            if(err) return res.send(err)
+            res.redirect(req.get('referer'));
+        });
+    });
+});
+
 module.exports = routes;

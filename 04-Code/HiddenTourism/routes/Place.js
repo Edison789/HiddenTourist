@@ -65,4 +65,17 @@ routes.post('/updatePlace', (req, res) => {
     })
 });
 
+
+//DELETE BY ID
+routes.get('/deletePlace/:id', (req, res) => {
+    const id = req.params.id;
+    req.getConnection((err, conn) => {
+        if(err) return res.send(err)
+        conn.query('DELETE FROM place WHERE IDPLACE=?',[id], (err, rows, fields) => {
+            if(err) return res.send(err)
+            res.redirect(req.get('referer'));
+        });
+    });
+});
+
 module.exports = routes;
