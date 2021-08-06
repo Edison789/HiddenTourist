@@ -35,4 +35,34 @@ routes.get('/viewPlace', (req, res) => {
     })
 });
 
+//delete place
+routes.post('/deletePlace', (req, res) => {
+    const id = req.body.id
+    req.getConnection((err, conn) => {
+        if (err) return res.send(err)
+        conn.query('DELETE FROM place WHERE IDPLACE=?',[id], (err, rows, fields) => {
+            if (err) return res.send(err)
+            res.redirect('./')
+        });
+    })
+});
+
+//UPDATE PLACE
+routes.post('/updatePlace', (req, res) => {
+    const id = req.body.id
+    const nameP = req.body.nameP
+    const province = req.body.province
+    const canton = req.body.canton
+    const address = req.body.address
+    const contact =req.body.contact
+    const activities = req.body.activities
+    req.getConnection((err, conn) => {
+        if (err) return res.send(err)
+        conn.query('UPDATE place SET NAMEPLACE=?, PROVINCEPLACE=?, CANTONPLACE=?, ADDRESSPLACE=?, CONTACTPLACE=?, ACTIVITIESPLACE=? WHERE IDPLACE=?', [nameP,province,canton,address,contact,activities,id], (err, rows) => {
+            if (err) return res.send(err)
+            res.redirect('./')
+        })
+    })
+});
+
 module.exports = routes;
