@@ -1,59 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form Places</title>
+        <link rel="stylesheet" href="form.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <form action="/placeAdd" method="POST" id="form">
+            <div class="form">
+                <h1>Places Form</h1>
+                <div class="group">
+                    <input type="text" name=""id="id" required><span class="barra"></span>
+                    <label for="">Place ID:</label>
+                </div>
+                <div class="group">
+                    <input type="text" name=""id="nameP" required><span class="barra"></span>
+                    <label for="">Place Name:</label>
+                </div>
+                <div class="group">
+                    <input type="text" name=""id="province" required><span class="barra"></span>
+                    <label for="">Province:</label>
+                </div>
+                <div class="group">
+                    <input type="text" name=""id="canton" required><span class="barra"></span>
+                    <label for="">Canton:</label>
+                </div>
+                <div class="group">
+                    <input type="text" name=""id="address" required><span class="barra"></span>
+                    <label for="">Address:</label>
+                </div>
+                <div class="group">
+                    <input type="text" name=""id="contact" required><span class="barra"></span>
+                    <label for="">Contact:</label>
+                </div>
+                <div class="group">
+                    <input type="text" name=""id="activities" required><span class="barra"></span>
+                    <label for="">Activities:</label>
+                </div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-    <title>Form Restaurant</title>
-</head>
-<body>
-    <div class="row">
-        <div class="col-6">
-            <section class="container text-center">
-                <h3 class="text-uppercase text-center">FORMULARIO DE INGRESO DE SITIO</h3></br>
-                <form action="/placeAdd" method="POST">
-                    <div class="form-group text-center">
-                        <label for="">Id del Sitio:</label></br>
-                        <input type="text" name="id" placeholder="Ingrese el ID del Sitio" size="60"
-                            class="input-grupo-addon">
-                    </div>
-                    <div class="form-group text-center">
-                        <label for="">Nombre del Sitio:</label></br>
-                        <input type="text" name="nameP" placeholder="Ingrese el Nombre del Sitio" size="60">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Provincia del Sitio:</label></br>
-                        <input type="text" name="province" placeholder="Ingrese la provincia del sitio" size="60">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Canton del Sitio:</label></br>
-                        <input type="text" name="canton" placeholder="Ingrese el canton del sitio" size="60">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Direccion del Sitio:</label></br>
-                        <input type="text" name="address" placeholder="Ingrese la direccion del sitio" size="60">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Contacto del Sitio:</label></br>
-                        <input type="text" name="contact" placeholder="Ingrese el contacto del sitio" size="60">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Actividades:</label></br>
-                        <input type="text" name="activities" placeholder="Ingrese el contacto del sitio" size="60">
-                    </div>
-            </section>
-            </br></br></br></br>
-            <section class="text-uppercase text-center">
-                <a href="#" class="btn btn-secondary btn-lg active" role="button">Regresar al Menú principal</a>
-                <button type="submit" class="btn btn-primary">REGISTER</button>
-            </section>
-            </form>
-        </div>
-    </div>
-</body>
+                <button type="submit">Save</button>
+                
+            </div>
+        </form>
+        
+    </body>
 </html>
