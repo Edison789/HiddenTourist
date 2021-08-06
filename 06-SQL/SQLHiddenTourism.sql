@@ -25,7 +25,7 @@ drop table if exists TOURIST;
 /*==============================================================*/
 create table ADMINISTRATOR
 (
-   IDADMINISTRATOR      varchar(8) not null,
+   IDADMINISTRATOR      varchar(10) not null,
    FIRSTNAMEADMINISTRATOR varchar(32),
    LASTNAMEADMINISTRATOR varchar(32),
    PASSWORDADMINISTRATOR varchar(32),
@@ -39,7 +39,7 @@ create table ADMINISTRATOR
 /*==============================================================*/
 create table PLACE
 (
-   IDPLACE              varchar(8) not null,
+   IDPLACE              varchar(10) not null,
    NAMEPLACE            varchar(64),
    PROVINCEPLACE        varchar(32),
    CANTONPLACE          varchar(32),
@@ -54,8 +54,8 @@ create table PLACE
 /*==============================================================*/
 create table RESERVATION
 (
-   IDRESERVATION        varchar(8) not null,
-   IDTOURIST            varchar(8),
+   IDRESERVATION        varchar(10) not null,
+   IDTOURIST            varchar(10),
    LOCATIONRESERVATION  varchar(32),
    PAYMENTTYPERESERVATION varchar(16),
    RESERVATIONDATERESERVATION date,
@@ -67,7 +67,7 @@ create table RESERVATION
 /*==============================================================*/
 create table RESTAURANT
 (
-   IDRESTAURANT         varchar(8) not null,
+   IDRESTAURANT         varchar(10) not null,
    NAMERESTAURANT       varchar(32),
    ADDRESSRESTAURANT    varchar(32),
    OPENINGTIMERESTAURANT varchar(8),
@@ -81,11 +81,11 @@ create table RESTAURANT
 /*==============================================================*/
 create table ROADMAP
 (
-   IDROADMAP            varchar(8) not null,
-   IDRESTAURANT         varchar(8) not null,
-   IDRESERVATION        varchar(8),
-   IDTOURGUIDE          varchar(8) not null,
-   IDROADMAP_PLACES     varchar(8),
+   IDROADMAP            varchar(10) not null,
+   IDRESTAURANT         varchar(10) not null,
+   IDRESERVATION        varchar(10),
+   IDTOURGUIDE          varchar(10) not null,
+   IDROADMAP_PLACES     varchar(10),
    primary key (IDROADMAP)
 );
 
@@ -94,9 +94,9 @@ create table ROADMAP
 /*==============================================================*/
 create table ROADMAP_PLACES
 (
-   IDROADMAP_PLACES     varchar(8) not null,
-   IDPLACE              varchar(8),
-   IDPROVINCERP         varchar(8),
+   IDROADMAP_PLACES     varchar(10) not null,
+   IDPLACE              varchar(10),
+   IDPROVINCERP         varchar(10),
    primary key (IDROADMAP_PLACES)
 );
 
@@ -105,7 +105,7 @@ create table ROADMAP_PLACES
 /*==============================================================*/
 create table TOURGUIDE
 (
-   IDTOURGUIDE          varchar(8) not null,
+   IDTOURGUIDE          varchar(10) not null,
    FIRSTNAMETOURGUIDE   varchar(32),
    LASTNAMETOURGUIDE    varchar(32),
    primary key (IDTOURGUIDE)
@@ -116,7 +116,7 @@ create table TOURGUIDE
 /*==============================================================*/
 create table TOURIST
 (
-   IDTOURIST            varchar(8) not null,
+   IDTOURIST            varchar(10) not null,
    FIRSTNAMETOURIST     varchar(32),
    LASTNAMETOURIST      varchar(32),
    PASSWORDTOURIST      varchar(16),
