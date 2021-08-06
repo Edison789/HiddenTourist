@@ -1,0 +1,34 @@
+http://localhost:3000/viewPlace
+http://localhost:3000/deletePlace
+http://localhost:3000/updatePlace
+http://localhost:3000/deletePlace/:id
+http://localhost:3000/placeAdd (POST)
+
+http://localhost:3000/restaurantAdd
+http://localhost:3000/viewRestaurant
+http://localhost:3000/deleteRestaurant
+http://localhost:3000/updateRestaurant
+http://localhost:3000/updateRestaurantdeleteRestaurant/:id
+
+http://localhost:3000/logedAdmin
+http://localhost:3000/logedUser
+http://localhost:3000/login (POST)
+
+http://localhost:3000/ReservationAdd (POST)
+http://localhost:3000/viewReservation
+http://localhost:3000/viewReservationUser
+
+
+http://localhost:3000/touristAdd (POST)
+http://localhost:3000/viewTourist
+http://localhost:3000/deleteTourist
+http://localhost:3000/updateTourist
+http://localhost:3000/deleteTourist/:id/
+
+
+
+http://localhost:3000/tourGuideAdd (POST)
+http://localhost:3000/viewGuide
+http://localhost:3000/deleteTourguide
+http://localhost:3000/updateTourguide
+http://localhost:3000/deleteTourguide/:id
