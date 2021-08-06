@@ -16,7 +16,7 @@ routes.post('/restaurantAdd', (req, res) => {
             res.redirect('/administratorGUI.html')
         })
     })
-})
+});
 
 //VIEW RESTAURANT
 routes.get('/viewRestaurant', (req, res) => {
@@ -31,6 +31,35 @@ routes.get('/viewRestaurant', (req, res) => {
                 console.log(err);
             }
         });
+    })
+});
+
+//delete restaurant
+routes.post('/deleteRestaurant', (req, res) => {
+    const id = req.body.id
+    req.getConnection((err, conn) => {
+        if (err) return res.send(err)
+        conn.query('DELETE FROM restaurant WHERE IDRESTAURANT=?',[id], (err, rows, fields) => {
+            if (err) return res.send(err)
+            res.redirect('./')
+        });
+    })
+});
+
+//UPDATE PLACE
+routes.post('/updateRestaurant', (req, res) => {
+    const id = req.body.id
+    const nameR = req.body.nameR
+    const address = req.body.address
+    const openingTime = req.body.openingTime
+    const closingTime =req.body.closingTime
+    const foodType = req.body.foodType
+    req.getConnection((err, conn) => {
+        if (err) return res.send(err)
+        conn.query('UPDATE restaurant SET IDRESTAURANT=?, NAMERESTAURANT=?, ADDRESSRESTAURANT=?, OPENINGTIMERESTAURANT=?, CLOSINGTIMERESTAURANT=?, CONSUMPTIONTYPERESTAURANT=? WHERE IDRESTAURANT=?', [nameR,address,openingTime,closingTime,foodType,id], (err, rows) => {
+            if (err) return res.send(err)
+            res.redirect('./')
+        })
     })
 });
 
