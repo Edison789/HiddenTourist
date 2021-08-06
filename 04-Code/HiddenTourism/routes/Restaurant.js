@@ -46,7 +46,7 @@ routes.post('/deleteRestaurant', (req, res) => {
     })
 });
 
-//UPDATE PLACE
+//UPDATE restaurant
 routes.post('/updateRestaurant', (req, res) => {
     const id = req.body.id
     const nameR = req.body.nameR
@@ -56,7 +56,7 @@ routes.post('/updateRestaurant', (req, res) => {
     const foodType = req.body.foodType
     req.getConnection((err, conn) => {
         if (err) return res.send(err)
-        conn.query('UPDATE restaurant SET IDRESTAURANT=?, NAMERESTAURANT=?, ADDRESSRESTAURANT=?, OPENINGTIMERESTAURANT=?, CLOSINGTIMERESTAURANT=?, CONSUMPTIONTYPERESTAURANT=? WHERE IDRESTAURANT=?', [nameR,address,openingTime,closingTime,foodType,id], (err, rows) => {
+        conn.query('UPDATE restaurant SET NAMERESTAURANT=?, ADDRESSRESTAURANT=?, OPENINGTIMERESTAURANT=?, CLOSINGTIMERESTAURANT=?, CONSUMPTIONTYPERESTAURANT=? WHERE IDRESTAURANT=?', [nameR,address,openingTime,closingTime,foodType,id], (err, rows) => {
             if (err) return res.send(err)
             res.redirect('./')
         })

@@ -30,4 +30,30 @@ routes.get('/viewGuide', (req, res) => {
     })
 });
 
+//delete tourguide
+routes.post('/deleteTourguide', (req, res) => {
+    const id = req.body.id
+    req.getConnection((err, conn) => {
+        if (err) return res.send(err)
+        conn.query('DELETE FROM tourguide WHERE IDTOURGUIDE=?',[id], (err, rows, fields) => {
+            if (err) return res.send(err)
+            res.redirect('./')
+        });
+    })
+});
+
+//UPDATE TOURGUIDE
+routes.post('/updateTourguide', (req, res) => {
+    const id = req.body.id
+    const firstName = req.body.firstName
+    const lastName = req.body.lastName
+    req.getConnection((err, conn) => {
+        if (err) return res.send(err)
+        conn.query('UPDATE tourguide SET FIRSTNAMETOURGUIDE=?, LASTNAMETOURGUIDE=? WHERE IDTOURGUIDE=?', [firstName,lastName,id], (err, rows) => {
+            if (err) return res.send(err)
+            res.redirect('./')
+        })
+    })
+});
+
 module.exports = routes;
