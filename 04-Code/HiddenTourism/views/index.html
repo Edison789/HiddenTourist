@@ -9,6 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/indexform.css">
     <link rel="shortcut icon" type="image/x-icon" href="img/logoICO.ico">
     <script>
         $(document).ready(function () {
@@ -147,13 +148,33 @@
                                 <img src="img/Baños Ambato.jfif" alt="" class="img-responsive">
                             </div>
                             <div class="col-md-6">
-                                <input type="text" placeholder="DI:" name="id">
-                                <input type="text" placeholder="First Name:" name="firstName">
-                                <input type="text" placeholder="Last Name:" name="lastName">
-                                <input type="password" name="passwrd" placeholder="Password:">
-                                <input type="text" placeholder="User:" name="user">
-                                <input type="email" placeholder="Email:" name="email">
-                            </div>
+                                <div class="form">
+                                    <div class="group">
+                                        <input type="text" name="id"required><span class="barra"></span>
+                                        <label for="">ID:</label>
+                                    </div>
+                                    <div class="group">
+                                        <input type="text" name="firstName"required><span class="barra"></span>
+                                        <label for="">First Name:</label>
+                                    </div>
+                                    <div class="group">
+                                        <input type="text" name="lastName"required><span class="barra"></span>
+                                        <label for="">Last Name:</label>
+                                    </div>                                
+                                    <div class="group">
+                                        <input type="text" name="user" required><span class="barra"></span>
+                                        <label for="">User:</label>
+                                    </div>
+                                    <div class="group">
+                                        <input type="password" name="passwrd" required><span class="barra"></span>
+                                        <label for="">Password:</label>
+                                    </div>
+                                    <div class="group">
+                                        <input type="email" name="email" required><span class="barra"></span>
+                                        <label for="">Email:</label>
+                                    </div>
+                                </div>
+                        </div>
                         </div>
                     </div>
                     <div class="modal-footer">

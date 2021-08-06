@@ -1,33 +1,5 @@
 :root {
-    --colorTextos: white;
-}
-
-::before,
-::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Roboto';
-    background: #303952;  /* fallback for old browsers */
-    height: 720px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-h1{
-    text-align: center;
-    font-weight: 700;
-    color: aliceblue;
-}
-
-form.group-pay{
-    color: white;
-    justify-content: center;
-    align-items: center;
+    --colorTextos: black;
 }
 
 form{
@@ -35,22 +7,16 @@ form{
     align-content: center;
     padding: 0 0px;
     box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
-    border-radius: 50px;
+    border-radius: 40px;
     justify-content: center;
     align-items: center;
-    color: white;
 }
 
 .form{
-    width: 500px;
+    width: 400px;
     margin: 0px;
     align-items: center;
     justify-content: center;
-}
-
-form .group{
-    position: relative;
-    margin: 35px ;
 }
 
 
@@ -67,7 +33,7 @@ input{
 
 input:focus{ 
     outline: none;
-    color: white;
+    color: black;
 }
 
 label{
@@ -107,23 +73,9 @@ input:valid~label{
 input:focus~.barra::before{
     width: 100%;
 }
-button{
-    font-family: 'roboto';
-    background: #4568DC;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #B06AB3, #4568DC);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    border: none;
-    display: block;
-    width: 25%;
-    margin: 10px auto;
-    color: #fff;
-    height: 40px;
-    font-size: 16px;
-    cursor: pointer;
-}
+
+
+
 
 @media screen and (max-width:200px){
     form{
