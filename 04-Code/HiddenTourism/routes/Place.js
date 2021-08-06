@@ -60,9 +60,22 @@ routes.post('/updatePlace', (req, res) => {
         if (err) return res.send(err)
         conn.query('UPDATE place SET NAMEPLACE=?, PROVINCEPLACE=?, CANTONPLACE=?, ADDRESSPLACE=?, CONTACTPLACE=?, ACTIVITIESPLACE=? WHERE IDPLACE=?', [nameP,province,canton,address,contact,activities,id], (err, rows) => {
             if (err) return res.send(err)
-            res.redirect('./')
+            res.redirect('/viewPlace')
         })
     })
+});
+
+routes.get('/editPlace/:id', (req, res) => {
+    const id = req.params.id;
+    req.getConnection((err, conn) => {
+        if (err) return res.send(err)
+        conn.query('SELECT * FROM place WHERE IDPLACE= ?', [id], (err, rows, fields) => {
+            if (err) return res.send(err)
+            res.render('editPlace.ejs', {
+                rows
+            });
+        });
+    });
 });
 
 

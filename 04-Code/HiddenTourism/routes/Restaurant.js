@@ -51,16 +51,29 @@ routes.post('/updateRestaurant', (req, res) => {
     const id = req.body.id
     const nameR = req.body.nameR
     const address = req.body.address
-    const openingTime = req.body.openingTime
-    const closingTime =req.body.closingTime
+    const opening = req.body.opening
+    const closing =req.body.closing
     const foodType = req.body.foodType
     req.getConnection((err, conn) => {
         if (err) return res.send(err)
-        conn.query('UPDATE restaurant SET NAMERESTAURANT=?, ADDRESSRESTAURANT=?, OPENINGTIMERESTAURANT=?, CLOSINGTIMERESTAURANT=?, CONSUMPTIONTYPERESTAURANT=? WHERE IDRESTAURANT=?', [nameR,address,openingTime,closingTime,foodType,id], (err, rows) => {
+        conn.query('UPDATE restaurant SET NAMERESTAURANT=?, ADDRESSRESTAURANT=?, OPENINGTIMERESTAURANT=?, CLOSINGTIMERESTAURANT=?, CONSUMPTIONTYPERESTAURANT=? WHERE IDRESTAURANT=?', [nameR,address,opening,closing,foodType,id], (err, rows) => {
             if (err) return res.send(err)
-            res.redirect('./')
+            res.redirect('/viewRestaurant')
         })
     })
+});
+
+routes.get('/editRestaurant/:id', (req, res) => {
+    const id = req.params.id;
+    req.getConnection((err, conn) => {
+        if (err) return res.send(err)
+        conn.query('SELECT * FROM restaurant WHERE IDRESTAURANT= ?', [id], (err, rows, fields) => {
+            if (err) return res.send(err)
+            res.render('editRestaurant.ejs', {
+                rows
+            });
+        });
+    });
 });
 
 //DELETE BY ID

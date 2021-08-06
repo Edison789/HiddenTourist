@@ -17,6 +17,7 @@
                 <th>ID</th>
                 <th>First Name</th>
                 <th>Last Name</th>
+                <th>OPTIONS</th>
             </tr>
         </thead>
         <tbody>
@@ -33,7 +34,7 @@
                     </td>
                     <td>
                         <a href="/deleteTourguide/<%=rows[i].IDTOURGUIDE%>" class="btn btn-danger">Delete</a>
-                        <a href="/edit/"<%=rows[i].IDTOURGUIDE%> class="btn btn-danger">Edit</a>
+                        <a href="/editTourGuide/<%=rows[i].IDTOURGUIDE%>"class="btn btn-info">Edit</a>
                     </td>
                 </tr>
             <% } %>

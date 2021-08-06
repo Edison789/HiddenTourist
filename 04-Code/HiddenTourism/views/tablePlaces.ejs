@@ -21,6 +21,7 @@
                 <th>ADDRESS</th>
                 <th>CONTACT</th>
                 <th>ATIVITIES</th>
+                <th>OPTIONS</th>
             </tr>
         </thead>
         <tbody>
@@ -49,7 +50,7 @@
                     </td>
                     <td>
                         <a href="/deletePlace/<%=rows[i].IDPLACE%>" class="btn btn-danger">Delete</a>
-                        <a href="/edit/"<%=rows[i].IDPLACE%> class="btn btn-danger">Edit</a>
+                        <a href="/editPlace/<%=rows[i].IDPLACE%>" class="btn btn-info">Edit</a>
                     </td>
                 </tr>
             <% } %>

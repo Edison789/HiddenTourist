@@ -19,6 +19,7 @@
                     <th>PASSWORD</th>
                     <th>USER</th>
                     <th>EMAIL</th>
+                    <th>OPTIONS</th>
                 </tr>
             </thead>
             <tbody>
@@ -44,7 +45,7 @@
                         </td>
                         <td>
                             <a href="/deleteTourist/<%=rows[i].IDTOURIST%>" class="btn btn-danger">Delete</a>
-                            <a href="/edit/"<%=rows[i].IDTOURIST%> class="btn btn-danger">Edit</a>
+                            <a href="/edit/<%=rows[i].IDTOURIST%>" class="btn btn-info">Edit</a>
                         </td>
                     </tr>
                 <% } %>

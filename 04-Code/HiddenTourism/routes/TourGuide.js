@@ -51,9 +51,22 @@ routes.post('/updateTourguide', (req, res) => {
         if (err) return res.send(err)
         conn.query('UPDATE tourguide SET FIRSTNAMETOURGUIDE=?, LASTNAMETOURGUIDE=? WHERE IDTOURGUIDE=?', [firstName,lastName,id], (err, rows) => {
             if (err) return res.send(err)
-            res.redirect('./')
+            res.redirect('/viewGuide')
         })
     })
+});
+
+routes.get('/editTourGuide/:id', (req, res) => {
+    const id = req.params.id;
+    req.getConnection((err, conn) => {
+        if (err) return res.send(err)
+        conn.query('SELECT * FROM tourguide WHERE IDTOURGUIDE= ?', [id], (err, rows, fields) => {
+            if (err) return res.send(err)
+            res.render('editTourGuide.ejs', {
+                rows
+            });
+        });
+    });
 });
 
 //DELETE BY ID

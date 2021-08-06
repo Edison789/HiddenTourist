@@ -19,6 +19,7 @@
                     <th>OPENING TIME</th>
                     <th>CLOSING TIME</th>
                     <th>FOOD TYPE</th>
+                    <th>OPTIONS</th>
                 </tr>
             </thead>
             <tbody>
@@ -44,7 +45,7 @@
                         </td>
                         <td>
                             <a href="/deleteRestaurant/<%=rows[i].IDRESTAURANT%>" class="btn btn-danger">Delete</a>
-                            <a href="/edit/"<%=rows[i].IDRESTAURANT%> class="btn btn-danger">Edit</a>
+                            <a href="/editRestaurant/<%=rows[i].IDRESTAURANT%>"class="btn btn-info">Edit</a>
                         </td>
                     </tr>
                 <% } %>

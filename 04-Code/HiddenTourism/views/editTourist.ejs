@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Places</title>
+    <link rel="stylesheet" href="/css/form.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <form action="/updateTourist" method="POST">
+        <div class="form">
+            <h1>Tourist Edit</h1>
+            <div class="group">
+                <input type="text" value="<%= rows[0].IDTOURIST%>" required disabled><span class="barra"></span>
+            </div>
+            <div class="group">
+                <input type="hidden" name="id" value="<%= rows[0].IDTOURIST%>"><span class="barra"></span>
+            </div>
+            <div class="group">
+                <input type="text" name="firstName" value="<%= rows[0].FIRSTNAMETOURIST%>" required><span
+                    class="barra"></span>
+                <label for="">First Name:</label>
+            </div>
+            <div class="group">
+                <input type="text" name="lastName" value="<%= rows[0].LASTNAMETOURIST%>" required><span
+                    class="barra"></span>
+                <label for="">Last Name:</label>
+            </div>
+            <div class="group">
+                <input type="text" name="user" value="<%= rows[0].PASSWORDTOURIST%>" required><span
+                    class="barra"></span>
+                <label for="">User:</label>
+            </div>
+            <div class="group">
+                <input type="password" name="passwrd" value="<%= rows[0].USERTOURIST%>" required><span
+                    class="barra"></span>
+                <label for="">Password:</label>
+            </div>
+            <div class="group">
+                <input type="email" name="email" value="<%= rows[0].EMAILTOURIST%>" required><span class="barra"></span>
+                <label for="">Email:</label>
+            </div>
+            <button type="submit">Save</button>
+
+        </div>
+    </form>
+
+</body>
+
+</html>

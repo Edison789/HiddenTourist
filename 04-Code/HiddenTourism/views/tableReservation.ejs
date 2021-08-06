@@ -16,21 +16,12 @@
     <table class="table table-hover table-dark">
         <thread>
             <tr>
-                <th scope="col">
-                    <div align="center">ID Reservation</div>
-                </th>
-                <th scope="col">
-                    <div align="center">ID Tourist</div>
-                </th>
-                <th scope="col">
-                    <div align="center">Location</div>
-                </th>
-                <th scope="col">
-                    <div align="center">Payment Type</div>
-                </th>
-                <th scope="col">
-                    <div align="center">Reservation Date</div>
-                </th>
+                <th>ID RESERVATIONS</th>
+                <th>ID TOURIST</th>
+                <th>LOCATION</th>
+                <th>PAYMENT TYPE</th>
+                <th>RESERVATION DATE</th>
+                <th>OPTIONS</th>
             </tr>
             </tread>
 
@@ -54,7 +45,7 @@
                         </td>
                         <td>
                             <a href="/deleteReservation/<%=rows[i].IDRESERVATION%>" class="btn btn-danger">Delete</a>
-                            <a href="/edit/" <%=rows[i].IDRESERVATION%> class="btn btn-danger">Edit</a>
+                            <a href="/editReservation/<%=rows[i].IDRESERVATION%> " class="btn btn-info">Edit</a>
                         </td>
                     </tr>
                     <% } %>
