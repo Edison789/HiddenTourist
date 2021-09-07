@@ -27,11 +27,11 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(morgan('short'))
 app.use(myConnection(mysql, {
-    host: 'localhost',
+    host: 'us-cdbr-east-04.cleardb.com',
     port: 3306,
-    user: 'root',
-    password: '12345',
-    database: 'hiddentourismnode'
+    user: 'b08ff55410e2e4',
+    password: '9c888638',
+    database: 'heroku_e3e846e07a0fb3d'
 }, 'single'));
 app.use(express.json())
 app.use(session({
