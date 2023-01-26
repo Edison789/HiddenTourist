@@ -28,9 +28,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(morgan('short'))
 app.use(myConnection(mysql, {
     port: 3306,
-    user: 'root',
-    password: '2558231Edi',
-    database: 'hidentourist'
+    user: 'bl6oIJpEZUARyGpI9ZgvzqxF0XjC1IUXXqPcgtkfVM8',
+    password: 'nx17S00DZ9wz3gn9DvSKf2i5sAzuXla7kx68Va/8sPg',
+    database: 'hwCVPSe56Qua3kgUlYmaRh8yEeZF0VzG2u8Ra5v4xzQ'
 }, 'single'));
 app.use(express.json())
 app.use(session({
