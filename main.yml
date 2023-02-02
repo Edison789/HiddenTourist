@@ -1,0 +1,18 @@
+name: Dastardly Scan
+
+on: [push]
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Dastardly Scan
+      uses: dastardly-scan/scan-action@master
+      with:
+        target: http://localhost:3000
+        username: epbaez1	
+        password: 290699

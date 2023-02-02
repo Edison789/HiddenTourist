@@ -27,11 +27,16 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(morgan('short'))
 app.use(myConnection(mysql, {
-    port: 3306,
-    host: process.env.MYSQL_URL,
-    user: process.env.MYSQL_USERNAME,
-    password: process.env.MYSQL_PASSWORD,
-    database: process.env.MYSQL_DATABASE
+    // port: 3306,
+    // host: process.env.MYSQL_URL,
+    // user: process.env.MYSQL_USERNAME,
+    // password: process.env.MYSQL_PASSWORD,
+    // database: process.env.MYSQL_DATABASE
+    port: 3307,
+    user: 'root',
+    password: '290699',
+    database: 'hiddentourist'
+
 }, 'single'));
 app.use(express.json())
 app.use(session({

@@ -123,7 +123,7 @@ create table TOURIST
    USERTOURIST          varchar(32),
    EMAILTOURIST         varchar(64),
    primary key (IDTOURIST)
-);
+);administrator
 
 alter table RESERVATION add constraint FK_TOURIST_RESERVATION foreign key (IDTOURIST)
       references TOURIST (IDTOURIST) on delete restrict on update restrict;
@@ -134,7 +134,7 @@ alter table ROADMAP add constraint FK_RESERVATION_ROADMAP foreign key (IDRESERVA
 alter table ROADMAP add constraint FK_RESTAURANT_ROADMAP foreign key (IDRESTAURANT)
       references RESTAURANT (IDRESTAURANT) on delete restrict on update restrict;
 
-alter table ROADMAP add constraint FK_ROADMAP_PLACER_ROADMAP foreign key (IDROADMAP_PLACES)
+alter table ROADMAP add constraint FK_ROADMAP_PLACER_ROADMAP foreign key (IDROADMAP_PLACES)hiddentourist
       references ROADMAP_PLACES (IDROADMAP_PLACES) on delete restrict on update restrict;
 
 alter table ROADMAP add constraint FK_TOURGUIDE_ROADMAP foreign key (IDTOURGUIDE)
